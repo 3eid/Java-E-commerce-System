@@ -16,14 +16,18 @@ public class Checkout {
         }
 
         if (!cart.isAllNotExpired()){
-            throw new IllegalArgumentException("Some ordered items are less than stock");
+            throw new IllegalArgumentException("Some ordered items are Expired");
         }
 
         double subTotal = cart.getSubtotal();
 
-        //send shippable items to shipment service;
+        //send shippable items to shipment service and get the total weight
         double totalWeight = Shipping.ship(cart.getShippableItems());
+
+        //calculate shipping fees
         double shippingFees= Shipping.PER_KG_SHIPPING_COST * totalWeight;
+
+        //calculate the grand total
         double grandTotal = subTotal + shippingFees;
 
         if (grandTotal > customer.getBalance()){
@@ -42,7 +46,7 @@ public class Checkout {
         for (CartItem item: cart.getItems()){
             System.out.println(item.getQuantity() +"X " + item.getProduct().getName() + "\t" + item.getTotalPrice() );
         }
-        System.out.println("----------------------\n");
+        System.out.println("----------------------");
         System.out.println("Subtotal \t" + subTotal);
         System.out.println("shipping \t" + shippingFees);
         System.out.println("Amount \t" + grandTotal);

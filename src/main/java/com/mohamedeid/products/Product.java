@@ -16,7 +16,7 @@ public abstract class Product {
     public int getQuantity() { return quantity; }
     public void setQuantity(int q) {
         if (q<0){
-            throw new IllegalArgumentException("Quantity can't be negative!")
+            throw new IllegalArgumentException("Quantity can't be negative!");
         }
         else {
             this.quantity = q;
@@ -27,4 +27,11 @@ public abstract class Product {
         setQuantity(this.getQuantity() - amount);
     }
 
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setPrice(double price) {
+        this.price = price;
+    }
 }

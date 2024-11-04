@@ -26,7 +26,13 @@ public class Customer {
         }
     }
 
+    /** reduce the balance of a customer by a given amount (if checkout) */
     public void reduceBalanceBy(double amount){
         setBalance(getBalance() - amount);
+    }
+
+    /** increases the balance of a customer by a given amount (if recharged) */
+    public void increaseBalanceBy(double amount){
+        setBalance(getBalance() + amount);
     }
 }

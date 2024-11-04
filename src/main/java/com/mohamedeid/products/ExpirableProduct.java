@@ -7,7 +7,6 @@ public class ExpirableProduct extends ShippableProduct{
     public ExpirableProduct(String name, double price, int quantity, double weight, LocalDate expiryDate){
         super(name, price, quantity, weight);
         this.expiryDate = expiryDate;
-
     }
 
     public boolean isExpired() {

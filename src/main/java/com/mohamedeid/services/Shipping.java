@@ -17,7 +17,7 @@ public class Shipping {
             totalWeight += shippable.getWeight() * item.getQuantity();
             System.out.println(item.getQuantity()+ "x " + shippable.getName() + "\t" +  item.getQuantity()*shippable.getWeight()*1000+"g" );
         }
-        System.out.println("Total package weight is " + totalWeight + "Kg\n\n");
+        System.out.println("Total package weight is " + totalWeight + "Kg\n");
         return totalWeight;
     }
 }
