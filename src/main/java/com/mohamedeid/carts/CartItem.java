@@ -32,9 +32,6 @@ public class CartItem {
 
     /**returns true if the requested quantity of the product is available in stock */
     public boolean isInStock(){
-        if (quantity <= product.getQuantity()){
-            return true;
-        }
-        return false;
+        return quantity <= product.getQuantity();
     }
 }
