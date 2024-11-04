@@ -25,4 +25,8 @@ public class Customer {
             throw new IllegalArgumentException("Balance can't be negative.");
         }
     }
+
+    public void reduceBalanceBy(double amount){
+        setBalance(getBalance() - amount);
+    }
 }

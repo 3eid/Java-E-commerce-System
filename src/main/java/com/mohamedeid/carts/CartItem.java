@@ -25,4 +25,11 @@ public class CartItem {
     public double getTotalPrice(){
         return product.getPrice() * quantity;
     }
+
+    public boolean isInStock(){
+        if (quantity <= product.getQuantity()){
+            return true;
+        }
+        return false;
+    }
 }

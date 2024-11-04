@@ -14,6 +14,17 @@ public abstract class Product {
     public String getName() { return name; }
     public double getPrice() { return price; }
     public int getQuantity() { return quantity; }
-    public void setQuantity(int q) {this.quantity = q;};
+    public void setQuantity(int q) {
+        if (q<0){
+            throw new IllegalArgumentException("Quantity can't be negative!")
+        }
+        else {
+            this.quantity = q;
+        }
+    }
+
+    public void reduceQuantityBy(int amount){
+        setQuantity(this.getQuantity() - amount);
+    }
 
 }
